@@ -20,7 +20,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
+- task: MavenAuthenticate@0
+  inputs:
+    artifactsFeeds: 'maven'
+    mavenServiceConnections: 'maven'
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub'
