@@ -66,4 +66,17 @@
       </plugin>
     </plugins>
   </build>
+  
+ <distributionManagement>    
+     <repository>
+  <id>maven</id>
+  <url>https://pkgs.dev.azure.com/arjitdevops/Devops/_packaging/maven/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+    </distributionManagement>
 </project>
