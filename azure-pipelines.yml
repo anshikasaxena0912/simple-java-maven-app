@@ -12,8 +12,8 @@ pool:
 steps:
 - task: MavenAuthenticate@0
   inputs:
-    artifactsFeeds: 'maven'
-    mavenServiceConnections: 'maven'
+    artifactsFeeds: 'arjitdevops'
+    mavenServiceConnections: 'maven_devops'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
