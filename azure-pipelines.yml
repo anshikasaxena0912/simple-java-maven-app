@@ -9,7 +9,22 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+
+
 steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'sonar'
+    organization: 'arjitdevops'
+    scannerMode: 'Other'
+    extraProperties: |
+      sonar.projectKey=srivasarjit_DevOps-Project
+      sonar.projectName=DevOps Project
+
+- task: SonarCloudAnalyze@1
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
 - task: MavenAuthenticate@0
   inputs:
     artifactsFeeds: 'arjitdevops'
