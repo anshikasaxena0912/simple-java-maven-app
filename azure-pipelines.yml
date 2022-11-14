@@ -13,14 +13,6 @@ pool:
 
 
 steps:
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'sonar'
-    organization: 'arjitdevops'
-    scannerMode: 'Other'
-    extraProperties: |
-      sonar.projectKey=srivasarjit_DevOps-Project
-      sonar.projectName=DevOps Project
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -30,8 +22,4 @@ steps:
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
-    sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
