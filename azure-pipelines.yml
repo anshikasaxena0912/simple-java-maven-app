@@ -16,10 +16,10 @@ variables:
   value: $[variables.SNYKTOKEN]
 steps:
 - task: Bash@3
+  displayName: Integrate SCA using snyk in Azure Devops pipeline
   inputs:
     targetType: 'inline'
     script: |
       SNYK_TOKEN=$(snyk_token) 
       export SNYK_TOKEN
       mvn snyk:test -fn 
-    displayName: Integrate SCA using snyk in Azure Devops pipeline
