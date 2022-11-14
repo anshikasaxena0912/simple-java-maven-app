@@ -10,16 +10,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-
-
+variables:
+- group: variables1
+- name: snyk_token
+  value: $[variables.SNYKTOKEN]
 steps:
-- task: Maven@4
+- task: Bash@3
   inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sqMavenPluginVersionChoice: 'latest'
+    targetType: 'inline'
+    script: |
+      SNYK_TOKEN=$(snyk_token) 
+      export SNYK_TOKEN
+      mvn snyk:test -fn 
+    displayName: Integrate SCA using snyk in Azure Devops pipeline
