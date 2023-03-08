@@ -33,7 +33,13 @@ steps:
   inputs:
     Contents: '*/*.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    
+- task: CmdLine@2
+  inputs:
+    script: |
+      cd $(Build.ArtifactStagingDirectory)
+      ls -lrth
+
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
