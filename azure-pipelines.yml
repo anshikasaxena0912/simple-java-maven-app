@@ -38,6 +38,8 @@ steps:
     script: |
       cd $(Build.ArtifactStagingDirectory)
       ls -lrth
+      mv target/*.jar ../
+      rmdir target/
 
 
 - task: PublishBuildArtifacts@1
