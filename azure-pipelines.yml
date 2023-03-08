@@ -38,8 +38,13 @@ steps:
     script: |
       cd $(Build.ArtifactStagingDirectory)
       ls -lrth
-      mv target/*.jar ../
+      cd target
+      ls
+      mv *.jar ../
+      cd ..
       rmdir target/
+      ls
+
 
 
 - task: PublishBuildArtifacts@1
@@ -47,6 +52,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'artifacts'
     publishLocation: 'Container'
-- task: DownloadPipelineArtifact@2
-  inputs:
-    artifact: artifacts
