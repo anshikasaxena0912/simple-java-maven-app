@@ -50,7 +50,6 @@
       <version>2.0.0</version>
       <inherited>false</inherited>
       <configuration>
-        <org>arjitautomation</org>
       </configuration>
       </plugin>  
       <plugin>
@@ -75,17 +74,4 @@
       </plugin>
     </plugins>
   </build>
-  
- <distributionManagement>    
-   <repository>
-  <id>arjitdevops</id>
-  <url>https://pkgs.dev.azure.com/arjitdevops/_packaging/arjitdevops/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repository>
-    </distributionManagement>
 </project>
