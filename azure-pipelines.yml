@@ -28,9 +28,3 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-
-- task: dependency-check-build-task@6
-  inputs:
-    projectName: 'maven_app'
-    scanPath: 'target/*.jar'
-    format: 'HTML'
