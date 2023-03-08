@@ -28,3 +28,9 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'target/*.jar'
+    Contents: '**'
+    TargetFolder: 'artifacts'
