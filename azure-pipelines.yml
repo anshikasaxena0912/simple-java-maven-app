@@ -31,11 +31,11 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    Contents: '*/*.jar'
+    Contents: '*.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/target/*.jar'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'artifacts'
     publishLocation: 'Container'
