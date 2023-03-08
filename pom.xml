@@ -85,7 +85,7 @@
     <enabled>true</enabled>
   </snapshots>
 </repository>
-  <repositories>    
+  </repositories>    
    <distributionManagement> 
   <repository>
   <id>arjitdevops</id>
