@@ -76,8 +76,9 @@
   </build>
   <repositories>
     <repository>
-  <id>arjitdevops</id>
-  <url>https://pkgs.dev.azure.com/arjitdevops/_packaging/arjitdevops/maven/v1</url>
+  <repository>
+  <id>maven</id>
+  <url>https://pkgs.dev.azure.com/arjitdevops/Devops/_packaging/maven/maven/v1</url>
   <releases>
     <enabled>true</enabled>
   </releases>
@@ -88,8 +89,9 @@
   </repositories>    
    <distributionManagement> 
   <repository>
-  <id>arjitdevops</id>
-  <url>https://pkgs.dev.azure.com/arjitdevops/_packaging/arjitdevops/maven/v1</url>
+  <repository>
+  <id>maven</id>
+  <url>https://pkgs.dev.azure.com/arjitdevops/Devops/_packaging/maven/maven/v1</url>
   <releases>
     <enabled>true</enabled>
   </releases>
