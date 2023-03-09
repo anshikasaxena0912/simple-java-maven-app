@@ -15,7 +15,7 @@ steps:
 - task: MavenAuthenticate@0
   inputs:
     artifactsFeeds: 'maven'
-    mavenServiceConnections: 'maven'
+    mavenServiceConnections: 'arjit_maven'
 
 - task: Maven@4
   inputs:
