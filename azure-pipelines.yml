@@ -10,7 +10,7 @@ variables:
   group: java_pipeline_variables
 
 pool:
-  vmImage: {{ vm }}
+  vmImage: $(vm)
 
 steps:
 - task: Maven@3
