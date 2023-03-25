@@ -13,11 +13,14 @@ pool:
   vmImage: $(vm)
 
 steps:
-
+- task: MavenAuthenticate@0
+  inputs:
+    artifactsFeeds: 'anshika'
+    mavenServiceConnections: 'maven_anshika'
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'clean install'
+    goals: 'clean deploy'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
