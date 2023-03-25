@@ -17,6 +17,8 @@ steps:
   inputs:
     artifactsFeeds: 'anshika'
     mavenServiceConnections: 'maven_anshika'
+
+
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -28,6 +30,10 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: SonarCloudAnalyze@1
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
 - task: CopyFiles@2
   inputs:
     Contents: '*/*jar'
@@ -37,3 +43,4 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'Java_output'
     publishLocation: 'Container'
+
