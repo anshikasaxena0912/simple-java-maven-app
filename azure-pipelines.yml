@@ -7,7 +7,7 @@ trigger:
 - master
 
 variables:
-  group: java_pipeline_variables
+- group: java_pipeline_variables
 
 pool:
   vmImage: $(vm)
