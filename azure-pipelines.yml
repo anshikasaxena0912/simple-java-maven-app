@@ -23,7 +23,6 @@ steps:
     artifactsFeeds: 'anshika'
     mavenServiceConnections: 'maven_anshika'
 
-
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -35,6 +34,8 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
+
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
