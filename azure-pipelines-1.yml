@@ -9,7 +9,13 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+
+
 steps:
+- task: MavenAuthenticate@0
+  inputs:
+    artifactsFeeds: 'anshika'
+    mavenServiceConnections: 'maven_anshika'
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -21,6 +27,7 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+
   
 - task: CopyPublishBuildArtifacts@1
   inputs:
