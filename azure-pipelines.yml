@@ -6,8 +6,11 @@
 trigger:
 - master
 
+variables:
+  group: java_pipeline_variables
+
 pool:
-  vmImage: windows-latest
+  vmImage: {{ vm }}
 
 steps:
 - task: Maven@3
