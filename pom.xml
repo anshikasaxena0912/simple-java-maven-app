@@ -85,7 +85,11 @@
     <enabled>true</enabled>
   </snapshots>
 </repository>
-  </repositories>    
+  </repositories> 
+  <properties>
+  <sonar.organization>anshika-job-hunt</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
    <distributionManagement> 
  <repository>
   <id>anshika</id>
