@@ -13,22 +13,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: MavenAuthenticate@0
-  inputs:
-    artifactsFeeds: 'anshika'
-    mavenServiceConnections: 'maven_anshika'
-
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'clean deploy'
+    goals: 'clean install'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
-
+    sonarQubeRunAnalysis: false
 
