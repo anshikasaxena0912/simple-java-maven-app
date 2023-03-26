@@ -13,11 +13,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'anshika-sonar'
-    organization: 'anshika-job-hunt'
-    scannerMode: 'Other'
 - task: MavenAuthenticate@0
   inputs:
     artifactsFeeds: 'anshika'
