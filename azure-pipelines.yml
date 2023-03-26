@@ -36,16 +36,4 @@ steps:
     sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
 
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
-- task: CopyFiles@2
-  inputs:
-    Contents: '*/*jar'
-    TargetFolder: '$(build.Artifactstagingdirectory)'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'Java_output'
-    publishLocation: 'Container'
 
