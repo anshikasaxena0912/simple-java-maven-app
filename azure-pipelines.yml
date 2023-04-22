@@ -27,7 +27,9 @@ steps:
 
 - task: Docker@2
   inputs:
-    command: 'build'
+    containerRegistry: 'dockerhub-arjit'
+    repository: 'arjitks77/anshika'
+    command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
 
 - task: CopyFiles@2
