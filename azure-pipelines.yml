@@ -27,7 +27,7 @@ steps:
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'containerpractice'
+    containerRegistry: 'containerdeploy'
     repository: 'container0912'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
